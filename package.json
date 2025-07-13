@@ -1,0 +1,28 @@
+{
+  "name": "glooko-to-nightscout",
+  "version": "0.0.0",
+  "description": "Import data from Glooko into Nightscout",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "mocha --recursive",
+    "fmt": "find src test -type f -name \"*.js\" -exec js-beautify -r --indent-size 2 {} \\;"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/earldouglas/glooko-to-nightscout.git"
+  },
+  "author": {
+    "name": "James Earl Douglas",
+    "email": "james@earldouglas.com",
+    "url": "https://earldouglas./"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/earldouglas/glooko-to-nightscout/issues"
+  },
+  "homepage": "https://github.com/earldouglas/glooko-to-nightscout#readme",
+  "devDependencies": {
+    "js-beautify": "1.15.4",
+    "mocha": "11.7.1"
+  }
+}
