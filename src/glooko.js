@@ -1,5 +1,3 @@
-const env = require('./env.js');
-
 async function getGlookoCookie(glookoEmail, glookoPassword) {
 
   const response =
