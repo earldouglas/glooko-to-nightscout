@@ -1,6 +1,6 @@
 const env = require('./env.js');
 const glookoClient = require('glookoClient');
-const nightscout = require('./nightscout.js');
+const nightscoutClient = require('nightscoutClient');
 
 const glookoEmail = env.envVarReq('GLOOKO_EMAIL');
 const glookoPassword = env.envVarReq('GLOOKO_PASSWORD');
@@ -31,7 +31,7 @@ async function main() {
     );
 
   const done =
-    await nightscout.addTreatments(
+    await nightscoutClient.addTreatments(
       nightscoutHost,
       nightscoutApiSecret,
       boluses

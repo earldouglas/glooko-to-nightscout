@@ -23,7 +23,8 @@
   },
   "homepage": "https://github.com/earldouglas/glooko-to-nightscout#readme",
   "dependencies": {
-    "glookoClient": "earldouglas/glooko-client#80b7d2a"
+    "glookoClient": "earldouglas/glooko-client#80b7d2a",
+    "nightscoutClient": "earldouglas/nightscout-client#287aade"
   },
   "devDependencies": {
     "js-beautify": "1.15.4",
