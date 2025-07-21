@@ -1,46 +1,3 @@
-async function getGlookoCookie(glookoEmail, glookoPassword) {
-
-  const response =
-    await fetch('https://api.glooko.com/api/v2/users/sign_in', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json; charset=UTF-8',
-      },
-      body: JSON.stringify({
-        userLogin: {
-          email: glookoEmail,
-          password: glookoPassword,
-        },
-        deviceInformation: {
-          applicationType: 'logbook',
-        },
-      }),
-    });
-
-  const glookoCookie =
-    response.headers.getSetCookie()[0].split('; ')[0];
-
-  return glookoCookie;
-}
-
-async function getGlookoCode(glookoCookie) {
-
-  const response =
-    await fetch('https://api.glooko.com/api/v3/session/users', {
-      method: 'GET',
-      headers: {
-        Accept: 'application/json; charset=UTF-8',
-        Cookie: glookoCookie,
-      },
-    });
-
-  const responseBody = await response.json();
-
-  const glookoCode = responseBody.currentPatient.glookoCode;
-
-  return glookoCode;
-}
-
 function localDate(timestampISOString, offsetString) {
 
   const offsetRegex = /^([+-])(\d\d):(\d\d)$/;
@@ -98,7 +55,5 @@ async function getBoluses(glookoCookie, glookoCode) {
 }
 
 module.exports = {
-  getGlookoCookie: getGlookoCookie,
-  getGlookoCode: getGlookoCode,
   getBoluses: getBoluses,
 };
