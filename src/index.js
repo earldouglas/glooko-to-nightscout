@@ -1,5 +1,4 @@
 const env = require('./env.js');
-const glooko = require('./glooko.js');
 const glookoClient = require('glookoClient');
 const nightscout = require('./nightscout.js');
 
@@ -12,18 +11,21 @@ const nightscoutApiSecret = env.envVarReq('NIGHTSCOUT_API_SECRET');
 async function main() {
 
   const glookoCookie =
-    await glookoClient.getGlookoCookie(
+    await glookoClient
+    .getGlookoCookie(
       glookoEmail,
       glookoPassword
     );
 
   const glookoCode =
-    await glookoClient.getGlookoCode(
+    await glookoClient
+    .getGlookoCode(
       glookoCookie
     );
 
   const boluses =
-    await glooko.getBoluses(
+    await glookoClient
+    .getBoluses(
       glookoCookie,
       glookoCode
     );
